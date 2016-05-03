@@ -16,7 +16,7 @@ public class TestaListaLivros {
 		for (Livro livro : livros) {
 			System.out.println("Título: "+ livro.getTitulo());
 			System.out.println("Autor: "+ livro.getAutor());
-			System.out.println("Editora: "+ livro.getEditora());
+			System.out.println("Editora_Teste: "+ livro.getEditora());
 			System.out.println("Em-mail: "+ livro.getEmail());
 			System.out.println("Data de Lançamento: "+ livro.getDataLancamento().getTime() + "\n");
 			
