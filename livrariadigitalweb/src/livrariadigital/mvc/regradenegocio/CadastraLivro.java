@@ -32,6 +32,6 @@ public class CadastraLivro implements RegraDeNegocio{
 		dao.adiciona(livro);
 		System.out.println("livro cadastrado!");
 			
-		return "listalivros2.jsp";
+		return "listalivro.jsp";
 	}
 }
