@@ -27,7 +27,7 @@
 					<td><input type="text" name="autor" /></td>	
 				</tr>
 				<tr>
-					<td>Editora:</td>
+					<td>Editora Nova:</td>
 					<td><input type="text" name="editora" /></td>	
 				</tr>
 				<tr>
