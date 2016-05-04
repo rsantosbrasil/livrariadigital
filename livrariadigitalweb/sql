@@ -1,0 +1,9 @@
+CREATE  TABLE `test`.`livro` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `titulo` VARCHAR(45) NOT NULL ,
+  `autor` VARCHAR(45) NOT NULL ,
+  `editora` VARCHAR(45) NOT NULL ,
+  `email` VARCHAR(45) NOT NULL ,
+  `dtlancamento` DATE NOT NULL ,
+  PRIMARY KEY (`id`) );
+
