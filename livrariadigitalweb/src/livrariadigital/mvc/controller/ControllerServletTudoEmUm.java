@@ -16,29 +16,29 @@ import livrariadigital.modelo.Livro;
 @SuppressWarnings("serial")
 @WebServlet("/tudoemum")
 public class ControllerServletTudoEmUm extends HttpServlet {
-	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String regra = req.getParameter("regraDeNegocio");
-		try {
-			LivroDao dao = new LivroDao();
-			
-			if(regra.equals("CadastraLivro")){
-				Livro livro = new Livro();
-				livro.setTitulo(req.getParameter("titulo"));
-				livro.setAutor(req.getParameter("autor"));
-				//editora, email, data...código para tratamento da data...
-				dao.adiciona(livro);
-				
-				RequestDispatcher rd = req.getRequestDispatcher("/livrocadastrado.jsp");
-				rd.forward(req, res);
-			} else if(regra.equals("ListaLivros")){
-				//tudo que faz listar um livro e redireciona para listalivros2.jsp
-			} else if(regra.equals("DeletaLivro")){
-				//tudo que precisa para deletar um livro e redireciona para listalivros2.jsp
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+//	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+//		String regra = req.getParameter("regraDeNegocio");
+//		try {
+//			LivroDao dao = new LivroDao();
+//			
+//			if(regra.equals("CadastraLivro")){
+//				Livro livro = new Livro();
+//				livro.setTitulo(req.getParameter("titulo"));
+//				livro.setAutor(req.getParameter("autor"));
+//				//editora, email, data...código para tratamento da data...
+//				dao.adiciona(livro);
+//				
+//				RequestDispatcher rd = req.getRequestDispatcher("/livrocadastrado.jsp");
+//				rd.forward(req, res);
+//			} else if(regra.equals("ListaLivros")){
+//				//tudo que faz listar um livro e redireciona para listalivros2.jsp
+//			} else if(regra.equals("DeletaLivro")){
+//				//tudo que precisa para deletar um livro e redireciona para listalivros2.jsp
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 }
 		
 		
