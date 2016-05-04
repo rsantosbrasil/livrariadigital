@@ -11,7 +11,7 @@ public class TestaListaLivros {
 	public static void main(String[] args) throws SQLException {
 		LivroDao dao = new LivroDao();
 		
-		List<Livro> livros = dao.getLista();
+		List<Livro> livros = dao.getListaLivro();
 		
 		for (Livro livro : livros) {
 			System.out.println("Título: "+ livro.getTitulo());

@@ -43,7 +43,7 @@ public class LivroDao {
 
 	// método que retorna uma lista de livros pesquisada no Banco de Dados
 	// livrariadigital
-	public List<Livro> getLista() {
+	public List<Livro> getListaLivro() {
 		try {
 			List<Livro> livros = new ArrayList<Livro>();
 

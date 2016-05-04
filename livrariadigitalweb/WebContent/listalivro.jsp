@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			<link href="css/estilo.css" rel="stylesheet">
-		<title>Lista livros</title>
+		<title>Lista de  livros</title>
 	</head>
 	<body>
 		<c:import url="cabecalho.jsp" />
@@ -19,7 +19,7 @@
 				<td>Data de lançamento</td>
 			</tr>
 
-			<c:forEach var="livro" items="${dao.lista}" varStatus="id">
+			<c:forEach var="livro" items="${dao.listaLivro}" varStatus="id">
 			<tr bgcolor="#${id.count % 2 == 0 ? 'd3d3d3' : 'ffffff' }">
 				<td>${id.count}</td>
 				<td>${livro.titulo}</td>
