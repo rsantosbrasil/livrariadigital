@@ -10,6 +10,7 @@
 
  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
  <link href="bootstrap/css/style.css" rel="stylesheet">
+ <link href="bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 </head>
 <body>
 <c:import url="cabecalho.jsp" />
@@ -40,11 +41,13 @@
   	  	<input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Data Lançamento</label>
+  	  	<label for="exampleInputEmail1">Data Lançamento</label>	
   	  	<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<snc:data id="data"/>
   	  </div>
+  	 </div>
 	<hr />
-	
+		
 	<div class="row">
 	  <div class="col-md-12">
 	  	<button type="submit" value="cadastrar" class="btn btn-primary">Salvar</button>
@@ -58,5 +61,6 @@
 
 <script src="bootstrap/js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap-datepicker.js"></script>
 </body>
 </html>

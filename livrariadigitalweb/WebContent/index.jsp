@@ -72,11 +72,11 @@
 					</c:if></td>
 								<td><fmt:formatDate value="${livro.dataLancamento.time}"
 										pattern="dd-MMM-yyyy" /></td>
-								<td class="actions"><a class="btn btn-success btn-xs"
-									href="view.html">Visualizar</a> <a
-									class="btn btn-warning btn-xs" href="edit.html">Editar</a> <a
-									class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-									data-target="#delete-modal">Excluir</a></td>
+										
+								<td class="actions">
+								<a class="btn btn-success btn-xs" href="view.html">Visualizar</a> 
+								<a class="btn btn-warning btn-xs" href="edit.html">Editar</a> 
+								<a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a></td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -112,7 +112,7 @@
 						aria-label="Fechar">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="modalLabel">Excluir Item</h4>
+					<h4 class="modal-title" id="modalLabel">Excluir Livro</h4>
 				</div>
 				<div class="modal-body">Deseja realmente excluir este livro?</div>
 				<div class="modal-footer">
