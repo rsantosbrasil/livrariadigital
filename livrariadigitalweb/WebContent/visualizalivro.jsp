@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib tagdir="/WEB-INF/tags" prefix="snc" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -12,7 +12,7 @@
  <link href="bootstrap/css/style.css" rel="stylesheet">
 </head>
 <body>
-
+<c:import url="cabecalho.jsp" />
 <!-- Modal -->
 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
   <div class="modal-dialog" role="document">
@@ -31,28 +31,6 @@
     </div>
   </div>
 </div>
-
- <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-   <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-     <span class="sr-only">Toggle navigation</span>
-     <span class="icon-bar"></span>
-     <span class="icon-bar"></span>
-     <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Web Dev Academy</a>
-   </div>
-   <div id="navbar" class="navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-right">
-     <li><a href="#">In&iacute;cio</a></li>
-     <li><a href="#">Op&ccedil;&otilde;es</a></li>
-     <li><a href="#">Perfil</a></li>
-     <li><a href="#">Ajuda</a></li>
-    </ul>
-   </div>
-  </div>
- </nav>
 
  <div id="main" class="container-fluid">
   <h3 class="page-header">Visualizar Item #1</h3>

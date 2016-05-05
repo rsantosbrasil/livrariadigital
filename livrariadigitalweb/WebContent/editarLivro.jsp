@@ -1,103 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib tagdir="/WEB-INF/tags" prefix="snc" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>CRUD com Bootstrap 3</title>
+ <title>Editar Livro</title>
 
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <c:import url="cabecalho.jsp" />
  <div id="main" class="container-fluid">
-  
-  <h3 class="page-header">Editar Item</h3>
-  
-  <form action="index.html">
+  <h3 class="page-header">Editar Livro</h3> 
+<form action="controller">
+  <input type="hidden" name="regraDeNegocio" value="AlteraLivro">
   	<div class="row">
   	  <div class="form-group col-md-4">
-  	  	<label for="exampleInputEmail1">Campo Um</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<label for="exampleInputEmail1">Titulo</label>
+  	  	<input type="text" name="titulo" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-4">
-  	  	<label for="exampleInputEmail1">Campo Dois</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<label for="exampleInputEmail1">Autor</label>
+  	  	<input type="text" name="autor" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-4">
-  	  	<label for="exampleInputEmail1">Campo Três</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<label for="exampleInputEmail1">Editora</label>
+  	  	<input type="text" name="editora" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	</div>
 	
 	<div class="row">
   	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Quatro</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<label for="exampleInputEmail1">Email</label>
+  	  	<input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Cinco</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<label for="exampleInputEmail1">Data Lançamento</label>	
+  	  	<!--<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">-->
+  	  	<snc:data id="data"/>
   	  </div>
-	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Seis</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Sete</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	</div>
-	
-	<div class="row">
-  	  <div class="form-group col-md-6">
-  	  	<label for="exampleInputEmail1">Campo Oito</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	  <div class="form-group col-md-6">
-  	  	<label for="exampleInputEmail1">Campo Nove</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	</div>
-	
-	<div class="row">
-  	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Dez</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Onze</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Doze</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	  <div class="form-group col-md-3">
-  	  	<label for="exampleInputEmail1">Campo Treza</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	</div>
-	
-	<div class="row">
-  	  <div class="form-group col-md-6">
-  	  	<label for="exampleInputEmail1">Campo Quatorze</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	  <div class="form-group col-md-6">
-  	  	<label for="exampleInputEmail1">Campo Quinze</label>
-  	  	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-  	  </div>
-	</div>
-	
+  	 </div>
 	<hr />
 	
 	<div class="row">
 	  <div class="col-md-12">
 	  	<button type="submit" class="btn btn-primary">Atualizar</button>
-		<a href="template.html" class="btn btn-default">Cancelar</a>
+		<a href="index.jsp" class="btn btn-default">Cancelar</a>
 	  </div>
 	</div>
 

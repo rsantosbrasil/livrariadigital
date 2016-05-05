@@ -42,7 +42,7 @@
   	  </div>
 	  <div class="form-group col-md-3">
   	  	<label for="exampleInputEmail1">Data Lançamento</label>	
-  	  	<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">-->
   	  	<snc:data id="data"/>
   	  </div>
   	 </div>
@@ -54,10 +54,8 @@
 		<a href="index.jsp" class="btn btn-default">Cancelar</a>
 	  </div>
 	</div>
-
   </form>
  </div>
- 
 
 <script src="bootstrap/js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
