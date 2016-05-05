@@ -11,7 +11,7 @@
 <ul>
 	<% 
 	LivroDao dao = new LivroDao();
-	List<Livro> livros = dao.getLista();
+	List<Livro> livros = dao.getListaLivro();
 	for(int i =0; i<livros.size(); i++){
 		Livro livro = livros.get(i);
 	

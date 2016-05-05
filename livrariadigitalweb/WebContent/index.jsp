@@ -8,32 +8,10 @@
 <title>CRUD com Bootstrap 3</title>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="bootstrap/css/style.css" rel="stylesheet">
 </head>
 <body>
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Cadastros de Livros</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Inicio</a></li>
-					<li><a href="#">Opções</a></li>
-					<li><a href="#">Perfil</a></li>
-					<li><a href="#">Ajuda</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+<c:import url="cabecalho.jsp" />
 	<div id="main" class="container-fluid" style="margin-top: 50px">
 
 		<div id="top" class="row">
@@ -54,7 +32,7 @@
 
 			</div>
 			<div class="col-sm-3">
-				<a href="add.html" class="btn btn-primary pull-right h2">Novo
+				<a href="cadastrarlivro.jsp" class="btn btn-primary pull-right h2">Novo
 					Livro</a>
 			</div>
 		</div>
@@ -115,7 +93,7 @@
 					<li class="disabled"><a>1</a></li>
 					<li><a href="#">2</a></li>
 					<li><a href="#">3</a></li>
-					<li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+					<li class="next"><a href="#" rel="next"> Pr�ximo &gt;</a></li>
 				</ul>
 				<!-- /.pagination -->
 			</div>
@@ -136,7 +114,7 @@
 					</button>
 					<h4 class="modal-title" id="modalLabel">Excluir Item</h4>
 				</div>
-				<div class="modal-body">Deseja realmente excluir este item?</div>
+				<div class="modal-body">Deseja realmente excluir este livro?</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary">Sim</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
