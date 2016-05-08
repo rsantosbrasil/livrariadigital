@@ -11,6 +11,7 @@ public class TestaPesquisar {
 
 	public static void main(String[] args) throws SQLException {
 
+		//alterado
 		LivroDao dao = new LivroDao();
 
 		List<Livro> livros = dao.pesquisaPalavra("pedra");

@@ -110,6 +110,7 @@ public class LivroDao {
 		}
 	}
 	
+	//adicionado
 	public List<Livro> pesquisaPalavra(String palavra) throws SQLException{
 		 
         String sql = "SELECT * FROM livro WHERE titulo LIKE ? ";

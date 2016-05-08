@@ -37,7 +37,8 @@
 								</tr>
 							</thead>
 
-							<c:forEach var="livro" items="${dao.pesquisaPalavra}" varStatus="id">
+							<c:forEach var="livro" items="${dao.pesquisaPalavra}"
+								varStatus="id">
 								<tbody>
 									<tr>
 										<td>${id.count}</td>
@@ -61,6 +62,7 @@
 								</tbody>
 							</c:forEach>
 						</table>
+					</div>
 				</form>
 			</div>
 

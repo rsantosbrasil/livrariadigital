@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import livrariadigital.dao.LivroDao;
 
-
+//alterado
 public class PesquisarLivro implements RegraDeNegocio{
 	public String execute(HttpServletRequest req, HttpServletResponse res)
 			throws Exception {
