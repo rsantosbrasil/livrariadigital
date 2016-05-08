@@ -8,10 +8,10 @@
 <title>CRUD com Bootstrap 3</title>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
- <link href="bootstrap/css/style.css" rel="stylesheet">
+<link href="bootstrap/css/style.css" rel="stylesheet">
 </head>
 <body>
-<c:import url="cabecalho.jsp" />
+	<c:import url="cabecalho.jsp" />
 	<div id="main" class="container-fluid" style="margin-top: 50px">
 
 		<div id="top" class="row">
@@ -23,10 +23,11 @@
 				<div class="input-group h2">
 					<input name="data[search]" class="form-control" id="search"
 						type="text" placeholder="Pesquisar Livros"> <span
-						class="input-group-btn">
-						<button class="btn btn-primary" type="submit">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
+						class="input-group-btn"> <a href="pesquisarlivro.jsp">
+							<button class="btn btn-primary" type="submit">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+					</a>
 					</span>
 				</div>
 
@@ -72,11 +73,12 @@
 					</c:if></td>
 								<td><fmt:formatDate value="${livro.dataLancamento.time}"
 										pattern="dd-MMM-yyyy" /></td>
-										
-								<td class="actions">
-								<a class="btn btn-success btn-xs" href="visualizalivro.jsp">Visualizar</a> 
-								<a class="btn btn-warning btn-xs" href="editarLivro.jsp">Editar</a> 
-								<a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a></td>
+
+								<td class="actions"><a class="btn btn-success btn-xs"
+									href="visualizalivro.jsp">Visualizar</a> <a
+									class="btn btn-warning btn-xs" href="editarLivro.jsp">Editar</a>
+									<a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+									data-target="#delete-modal">Excluir</a></td>
 							</tr>
 						</tbody>
 					</c:forEach>

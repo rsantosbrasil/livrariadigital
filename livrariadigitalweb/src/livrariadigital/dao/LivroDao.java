@@ -109,4 +109,42 @@ public class LivroDao {
 			throw new RuntimeException();
 		}
 	}
+	
+	public List<Livro> pesquisaPalavra(String palavra) throws SQLException{
+		 
+        String sql = "SELECT * FROM livro WHERE titulo LIKE ? ";
+	 PreparedStatement stm = conn.prepareStatement(sql);
+	 
+         stm.setString(1,"%"+palavra +"%");
+         
+         ResultSet rset = stm.executeQuery(); // faz a consulta
+	 List<Livro> livros = new ArrayList<Livro>();
+	 
+     
+         
+	 	while (rset.next()){ // traz as colunas dos registros em cada livro
+	 		Livro livro = new Livro();
+	 		livro.setTitulo(rset.getString("titulo"));
+	 		livro.setAutor(rset.getString("autor"));
+	 		livro.setEditora(rset.getString("editora"));
+	 		livro.setEmail(rset.getString("email"));
+	 		
+	 		Calendar data = Calendar.getInstance();
+			data.setTime(rset.getDate("dtlancamento"));
+			livro.setDataLancamento(data);
+	 		
+	 		livros.add(livro); // adiciona o item que esta em memoria para lista
+	 	}
+	 
+	 
+	 rset.close();
+	 stm.close();
+	 return livros;
+	 
+	 
+	 
+	 
+ }
+
+	
 }
