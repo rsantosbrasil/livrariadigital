@@ -9,7 +9,7 @@ import livrariadigital.modelo.Livro;
 public class TesteAdicionaLivro {
 	public static void main(String[] args) throws SQLException {
 		Livro livro = new Livro();
-		livro.setTitulo("Elite da Tropa");
+		livro.setTitulo("Elite da Tropa2222222");
 		livro.setAutor("Rodrigo Pimentel");
 		livro.setEditora("Editora Objetiva");
 		livro.setEmail("elitedatropa@editoraojetiva.com.br");
