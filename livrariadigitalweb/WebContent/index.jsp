@@ -76,8 +76,8 @@
 
 								<td class="actions"><a class="btn btn-success btn-xs"
 									href="visualizalivro.jsp">Visualizar</a> 
-									<a class="btn btn-warning btn-xs" href="livrocontroller?regraDeNegocio=AlteraLivro&id=${livro.id}">Editar</a>
-									<a class="btn btn-danger btn-xs" href="livrocontroller?regraDeNegocio=DeletaLivro&id=${livro.id}">Excluir</a></td>
+									<a class="btn btn-warning btn-xs" href="controller?regraDeNegocio=CarregaDados&id=${livro.id}">Editar</a>
+									<a class="btn btn-danger btn-xs" href="controller?regraDeNegocio=ExcluiLivro&id=${livro.id}">Excluir</a></td>
 							</tr>
 						</tbody>
 					</c:forEach>

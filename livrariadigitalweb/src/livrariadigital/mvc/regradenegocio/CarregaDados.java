@@ -6,20 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import livrariadigital.dao.LivroDao;
 import livrariadigital.modelo.Livro;
 
-
-public class ExcluiLivro implements RegraDeNegocio {
+public class CarregaDados implements RegraDeNegocio {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		
 		LivroDao dao = new LivroDao();
 		String id = req.getParameter("id");
-		Livro livro = new Livro();
-		livro.setId(Long.valueOf(id));
-		dao.exclui(livro);
-		System.out.println("livro Excluido!");
-		
-		return "index.jsp";
+		Livro livro = dao.getPesquisaPorId(Long.valueOf(id));
+		req.setAttribute("livro", livro);
+
+		return "editarLivro.jsp";
 	}
 
 }

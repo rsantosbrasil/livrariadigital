@@ -16,7 +16,7 @@
 <c:import url="cabecalho.jsp" />
  <div id="main" class="container-fluid">
   <h3 class="page-header">Editar Livro</h3> 
-<form action="livrocontroller">
+<form action="controller">
   <input type="hidden" name="regraDeNegocio" value="AlteraLivro">
   	<div class="row">
   	  <div class="form-group col-md-4">
