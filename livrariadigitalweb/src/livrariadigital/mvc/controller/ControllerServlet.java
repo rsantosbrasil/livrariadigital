@@ -13,6 +13,8 @@ import livrariadigital.mvc.regradenegocio.RegraDeNegocio;
 @SuppressWarnings("serial")
 @WebServlet("/controller")
 public class ControllerServlet extends HttpServlet {
+	
+
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String regra = req.getParameter("regraDeNegocio");
 		String classeRegra = "livrariadigital.mvc.regradenegocio." + regra;

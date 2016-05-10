@@ -31,8 +31,7 @@ public class LivroDao {
 			stmt.setString(2, livro.getAutor());
 			stmt.setString(3, livro.getEditora());
 			stmt.setString(4, livro.getEmail());
-			stmt.setDate(5, new Date(livro.getDataLancamento()
-					.getTimeInMillis()));
+			stmt.setDate(5, new Date(livro.getDataLancamento().getTimeInMillis()));
 
 			stmt.execute();
 			stmt.close();
@@ -79,26 +78,25 @@ public class LivroDao {
 	// método que altera o conteúdo de um livro no Banco de Dados
 	public void altera(Livro livro) {
 		String sql = "update livro set titulo=?, autor=?, editora=?, email=?, dtlancamento=? where id=?";
-		
+
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			
+
 			stmt.setString(1, livro.getTitulo());
 			stmt.setString(2, livro.getAutor());
 			stmt.setString(3, livro.getEditora());
 			stmt.setString(4, livro.getEmail());
 			stmt.setDate(5, new Date(livro.getDataLancamento().getTimeInMillis()));
-			
+
 			stmt.execute();
-			stmt.close(); 
+			stmt.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
 	}
 
-
-	public void exclui(Livro livro){
+	public void exclui(Livro livro) {
 		try {
 			String sql = "delete from livro where id=?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -109,43 +107,69 @@ public class LivroDao {
 			throw new RuntimeException();
 		}
 	}
-	
-	//adicionado
-	public List<Livro> pesquisaPalavra(String palavra) throws SQLException{
-		 
-        String sql = "SELECT * FROM livro WHERE titulo LIKE ? ";
-	 PreparedStatement stm = conn.prepareStatement(sql);
-	 
-         stm.setString(1,"%"+palavra +"%");
-         
-         ResultSet rset = stm.executeQuery(); // faz a consulta
-	 List<Livro> livros = new ArrayList<Livro>();
-	 
-     
-         
-	 	while (rset.next()){ // traz as colunas dos registros em cada livro
-	 		Livro livro = new Livro();
-	 		livro.setTitulo(rset.getString("titulo"));
-	 		livro.setAutor(rset.getString("autor"));
-	 		livro.setEditora(rset.getString("editora"));
-	 		livro.setEmail(rset.getString("email"));
-	 		
-	 		Calendar data = Calendar.getInstance();
+
+	// adicionado
+	public List<Livro> pesquisaPalavra(String palavra) throws SQLException {
+
+		String sql = "SELECT * FROM livro WHERE titulo LIKE ? ";
+		PreparedStatement stm = conn.prepareStatement(sql);
+
+		stm.setString(1, "%" + palavra + "%");
+
+		ResultSet rset = stm.executeQuery(); // faz a consulta
+		List<Livro> livros = new ArrayList<Livro>();
+
+		while (rset.next()) { // traz as colunas dos registros em cada livro
+			Livro livro = new Livro();
+			livro.setId(rset.getLong("id"));
+			livro.setTitulo(rset.getString("titulo"));
+			livro.setAutor(rset.getString("autor"));
+			livro.setEditora(rset.getString("editora"));
+			livro.setEmail(rset.getString("email"));
+
+			Calendar data = Calendar.getInstance();
 			data.setTime(rset.getDate("dtlancamento"));
 			livro.setDataLancamento(data);
-	 		
-	 		livros.add(livro); // adiciona o item que esta em memoria para lista
-	 	}
-	 
-	 
-	 rset.close();
-	 stm.close();
-	 return livros;
-	 
-	 
-	 
-	 
- }
 
+			livros.add(livro); // adiciona o item que esta em memoria para lista
+		}
+
+		rset.close();
+		stm.close();
+		return livros;
+
+	}
+
+	public Livro getPesquisaPorId(Long id) throws SQLException {
+
+		String sql = "SELECT * FROM livro WHERE id=?";
+		Livro livro = null;
+
+		try {
+			PreparedStatement stm = conn.prepareStatement(sql);
+			stm.setLong(1, id);
+
+			ResultSet rset = stm.executeQuery(); // faz a consulta
+
+			if (rset.next()) {
+				livro = new Livro();
+				livro.setId(rset.getLong("id"));
+				livro.setTitulo(rset.getString("titulo"));
+				livro.setAutor(rset.getString("autor"));
+				livro.setEditora(rset.getString("editora"));
+				livro.setEmail(rset.getString("email"));
+
+				Calendar data = Calendar.getInstance();
+				data.setTime(rset.getDate("dtlancamento"));
+				livro.setDataLancamento(data);
+			}
+			
+			rset.close();
+			stm.close();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		return livro;
 	
+	}
 }

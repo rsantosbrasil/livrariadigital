@@ -75,10 +75,9 @@
 										pattern="dd-MMM-yyyy" /></td>
 
 								<td class="actions"><a class="btn btn-success btn-xs"
-									href="visualizalivro.jsp">Visualizar</a> <a
-									class="btn btn-warning btn-xs" href="editarLivro.jsp">Editar</a>
-									<a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-									data-target="#delete-modal">Excluir</a></td>
+									href="visualizalivro.jsp">Visualizar</a> 
+									<a class="btn btn-warning btn-xs" href="livrocontroller?regraDeNegocio=AlteraLivro&id=${livro.id}">Editar</a>
+									<a class="btn btn-danger btn-xs" href="livrocontroller?regraDeNegocio=DeletaLivro&id=${livro.id}">Excluir</a></td>
 							</tr>
 						</tbody>
 					</c:forEach>

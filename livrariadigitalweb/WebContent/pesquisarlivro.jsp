@@ -12,6 +12,7 @@
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />
+	<jsp:useBean id="dao" class="livrariadigital.dao.LivroDao"></jsp:useBean>
 	<div id="main" class="container-fluid" style="margin-top: 50px">
 
 		<div id="top" class="row">
