@@ -42,7 +42,7 @@
   	  </div>
 	  <div class="form-group col-md-3">
   	  	<label for="exampleInputEmail1">Data Lançamento</label>	
-  	  <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">-->
+  	 <!--<input type="text" class="form-control" id="date" placeholder="MM/DD/YYY">--> 
   	  	<snc:data id="data"/>
   	  </div>
   	 </div>

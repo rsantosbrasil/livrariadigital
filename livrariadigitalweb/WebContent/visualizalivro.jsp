@@ -1,3 +1,4 @@
+<%@page import="livrariadigital.modelo.Livro"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="snc" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,6 +13,7 @@
  <link href="bootstrap/css/style.css" rel="stylesheet">
 </head>
 <body>
+<%Livro livro = (Livro) request.getAttribute("livro"); %>
 <c:import url="cabecalho.jsp" />
 <!-- Modal -->
 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
@@ -34,71 +36,49 @@
 
  <div id="main" class="container-fluid">
   <h3 class="page-header">Visualizar Item #1</h3>
-  
+  <form action="controller">
+  <input type="hidden" name="regraDeNegocio" value="CarregaDados">
   <div class="row">
     <div class="col-md-4">
-      <p><strong>Campo Um</strong></p>
-  	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+      <p><strong>Cadastro</strong></p>
+  	  <p><%=livro.getId()%></p>
+    </div>
+    <div class="col-md-4">
+      <p><strong>Titulo</strong></p>
+  	  <p><%=livro.getTitulo()%></p>
     </div>
 	
 	<div class="col-md-4">
-      <p><strong>Campo Dois</strong></p>
-  	  <p>Lorem ipsum dolor</p>
+      <p><strong>Autor</strong></p>
+  	  <p><%=livro.getAutor() %></p>
     </div>
 	
 	<div class="col-md-4">
-      <p><strong>Campo Três</strong></p>
-  	  <p>123.456.789-0</p>
+      <p><strong>Editora</strong></p>
+  	  <p><%=livro.getEditora() %></p>
     </div>
 
     <div class="col-md-4">
-      <p><strong>Campo Quatro</strong></p>
-  	  <p>In vel sollicitudin leo, id fermentum augue.</p>
+      <p><strong>Email</strong></p>
+  	  <p><%=livro.getEmail() %></p>
     </div>
 	
 	<div class="col-md-4">
-      <p><strong>Campo Cinco</strong></p>
-  	  <p>(00) 234-5678</p>
-    </div>
-	
-	<div class="col-md-4">
-      <p><strong>Campo Seis</strong></p>
-  	  <p>Nullam ultrices elit ante.</p>
-    </div>
-	
-    <div class="col-md-4">
-      <p><strong>Campo Sete</strong></p>
-  	  <p>Integer finibus in ligula vitae aliquet.</p>
-    </div>
-	
-	<div class="col-md-4">
-      <p><strong>Campo Oito</strong></p>
-  	  <p>Jes</p>
-    </div>
-	
-	<div class="col-md-4">
-      <p><strong>Campo Nove</strong></p>
-  	  <p>Lundo, Merkredo, Vendredo</p>
-    </div>
- 
-    <div class="col-md-8">
-      <p><strong>Campo Dez</strong></p>
-  	  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-	  In bibendum nunc urna, at vestibulum neque pellentesque eget. 
-	  Maecenas lacinia velit ante, vitae fermentum ex interdum et. 
-	  In vel sollicitudin leo, id fermentum augue. </p>
+      <p><strong>Data de Lançamento</strong></p>
+  	  <p><%=livro.getDataLancamento()%></p>
     </div>
  </div>
  
  <hr />
  <div id="actions" class="row">
    <div class="col-md-12">
-     <a href="index.html" class="btn btn-primary">Fechar</a>
-	 <a href="edit.html" class="btn btn-default">Editar</a>
-	 <a href="#" class="btn btn-default" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+     <a href="index.jsp" class="btn btn-primary">Fechar</a>
+	 <a href="controller?regraDeNegocio=CarregaDadosEdit&id=${livro.id}" class="btn btn-default">Editar</a>
+	 <a href="controller?regraDeNegocio=ExcluiLivro&id=${livro.id}" class="btn btn-default">Excluir</a>
    </div>
  </div>
- 
+ </form>
+ </div> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->

@@ -74,9 +74,9 @@
 								<td><fmt:formatDate value="${livro.dataLancamento.time}"
 										pattern="dd-MMM-yyyy" /></td>
 
-								<td class="actions"><a class="btn btn-success btn-xs"
-									href="visualizalivro.jsp">Visualizar</a> 
-									<a class="btn btn-warning btn-xs" href="controller?regraDeNegocio=CarregaDados&id=${livro.id}">Editar</a>
+								<td class="actions">
+								    <a class="btn btn-success btn-xs" href="controller?regraDeNegocio=CarregaDados&id=${livro.id}">Visualizar</a> 
+									<a class="btn btn-warning btn-xs" href="controller?regraDeNegocio=CarregaDadosEdit&id=${livro.id}">Editar</a>
 									<a class="btn btn-danger btn-xs" href="controller?regraDeNegocio=ExcluiLivro&id=${livro.id}">Excluir</a></td>
 							</tr>
 						</tbody>

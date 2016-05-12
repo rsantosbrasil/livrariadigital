@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import livrariadigital.dao.LivroDao;
 import livrariadigital.modelo.Livro;
 
-public class CarregaDados implements RegraDeNegocio {
+public class CarregaDadosEdit implements RegraDeNegocio {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
@@ -16,7 +16,7 @@ public class CarregaDados implements RegraDeNegocio {
 		Livro livro = dao.getPesquisaPorId(Long.valueOf(id));
 		req.setAttribute("livro", livro);
 
-		return "visualizalivro.jsp";
+		return "editarLivro.jsp";
 	}
 
 }
