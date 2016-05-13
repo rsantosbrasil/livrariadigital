@@ -11,6 +11,7 @@ public class AlteraLivro implements RegraDeNegocio {
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		Livro livro = new Livro();
+		livro.setId(Long.valueOf(req.getParameter("id")));
 		livro.setTitulo(req.getParameter("titulo"));
 		livro.setAutor(req.getParameter("autor"));
 		livro.setEditora(req.getParameter("editora"));

@@ -22,50 +22,50 @@ import livrariadigital.modelo.Livro;
 public class LivroController extends HttpServlet {
 
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String regra = req.getParameter("regraDeNegocio");
-		try {
-			LivroDao dao = new LivroDao();
-
-			if (regra.equals("CadastraLivro")) {
-				Livro livro = new Livro();
-				livro.setTitulo(req.getParameter("titulo"));
-				livro.setAutor(req.getParameter("autor"));
-				livro.setEditora(req.getParameter("editora"));
-				livro.setEmail(req.getParameter("email"));
-
-				String data = req.getParameter("data");
-				Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data);
-				Calendar data2 = Calendar.getInstance();
-				data2.setTime(date);
-
-				livro.setDataLancamento(data2);
-
-				dao.adiciona(livro);
-				System.out.println("livro cadastrado!");
-
-				RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
-				rd.forward(req, res);
-
-			} else if (regra != null && regra.equals("AlteraLivro")) {
-				String id = req.getParameter("id");
-				Livro livro = dao.getPesquisaPorId(Long.valueOf(id));
-				req.setAttribute("livro", livro);
-
-				RequestDispatcher rd = req.getRequestDispatcher("/editarLivro.jsp");
-				rd.forward(req, res);
-
-			} else if (regra != null && regra.equals("DeletaLivro")) {
-				String id = req.getParameter("id");
-				Livro livro = new Livro();
-				livro.setId(Long.valueOf(id));
-				dao.exclui(livro);
-				System.out.println("livro Excluido!");
-
-				RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
-				rd.forward(req, res);
-			}
-		} catch (SQLException | ParseException e) {
-			e.printStackTrace();
-		}
+//		String regra = req.getParameter("regraDeNegocio");
+//		try {
+//			LivroDao dao = new LivroDao();
+//
+//			if (regra.equals("CadastraLivro")) {
+//				Livro livro = new Livro();
+//				livro.setTitulo(req.getParameter("titulo"));
+//				livro.setAutor(req.getParameter("autor"));
+//				livro.setEditora(req.getParameter("editora"));
+//				livro.setEmail(req.getParameter("email"));
+//
+//				String data = req.getParameter("data");
+//				Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+//				Calendar data2 = Calendar.getInstance();
+//				data2.setTime(date);
+//
+//				livro.setDataLancamento(data2);
+//
+//				dao.adiciona(livro);
+//				System.out.println("livro cadastrado!");
+//
+//				RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
+//				rd.forward(req, res);
+//
+//			} else if (regra != null && regra.equals("AlteraLivro")) {
+//				String id = req.getParameter("id");
+//				Livro livro = dao.getPesquisaPorId(Long.valueOf(id));
+//				req.setAttribute("livro", livro);
+//
+//				RequestDispatcher rd = req.getRequestDispatcher("/editarLivro.jsp");
+//				rd.forward(req, res);
+//
+//			} else if (regra != null && regra.equals("DeletaLivro")) {
+//				String id = req.getParameter("id");
+//				Livro livro = new Livro();
+//				livro.setId(Long.valueOf(id));
+//				dao.exclui(livro);
+//				System.out.println("livro Excluido!");
+//
+//				RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
+//				rd.forward(req, res);
+//			}
+//		} catch (SQLException | ParseException e) {
+//			e.printStackTrace();
+//		}
 	}
 }

@@ -87,6 +87,7 @@ public class LivroDao {
 			stmt.setString(3, livro.getEditora());
 			stmt.setString(4, livro.getEmail());
 			stmt.setDate(5, new Date(livro.getDataLancamento().getTimeInMillis()));
+			stmt.setLong(6, livro.getId());
 
 			stmt.execute();
 			stmt.close();

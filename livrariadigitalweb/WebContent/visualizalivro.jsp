@@ -1,6 +1,7 @@
 <%@page import="livrariadigital.modelo.Livro"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="snc" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -65,7 +66,7 @@
 	
 	<div class="col-md-4">
       <p><strong>Data de Lançamento</strong></p>
-  	  <p><%=livro.getDataLancamento()%></p>
+  	  <p><fmt:formatDate value="${livro.dataLancamento.time}" pattern="dd-MMM-yyyy" /></p>
     </div>
  </div>
  

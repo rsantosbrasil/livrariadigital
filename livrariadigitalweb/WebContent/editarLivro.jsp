@@ -18,7 +18,12 @@
   <h3 class="page-header">Editar Livro</h3> 
 <form action="controller">
   <input type="hidden" name="regraDeNegocio" value="AlteraLivro">
+ 	 
   	<div class="row">
+  	 <div class="form-group col-md-2">
+  	  	<label for="exampleInputEmail1">ID</label>
+  	  	<input readonly="readonly" type="text" name="id" class="form-control" value="<%=livro.getId()%>" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  </div>
   	  <div class="form-group col-md-4">
   	  	<label for="exampleInputEmail1">Titulo</label>
   	  	<input type="text" name="titulo" class="form-control" value="<%=livro.getTitulo()%>" id="exampleInputEmail1" placeholder="Digite o valor">
