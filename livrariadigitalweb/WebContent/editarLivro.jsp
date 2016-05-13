@@ -12,7 +12,7 @@
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<%Livro livro = (Livro) request.getAttribute("livro"); %>
+
 <c:import url="cabecalho.jsp" />
  <div id="main" class="container-fluid">
   <h3 class="page-header">Editar Livro</h3> 
@@ -22,30 +22,30 @@
   	<div class="row">
   	 <div class="form-group col-md-2">
   	  	<label for="exampleInputEmail1">ID</label>
-  	  	<input readonly="readonly" type="text" name="id" class="form-control" value="<%=livro.getId()%>" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<input readonly="readonly" type="text" name="id" class="form-control" value="${requestScope.livro.id}" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
   	  <div class="form-group col-md-4">
   	  	<label for="exampleInputEmail1">Titulo</label>
-  	  	<input type="text" name="titulo" class="form-control" value="<%=livro.getTitulo()%>" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<input type="text" name="titulo" class="form-control" value="${requestScope.livro.titulo}" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-4">
   	  	<label for="exampleInputEmail1">Autor</label>
-  	  	<input type="text" name="autor" class="form-control" value="<%=livro.getAutor()%>" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<input type="text" name="autor" class="form-control" value="${requestScope.livro.autor}" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-4">
   	  	<label for="exampleInputEmail1">Editora</label>
-  	  	<input type="text" name="editora" class="form-control" value="<%=livro.getEditora()%>" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<input type="text" name="editora" class="form-control" value="${requestScope.livro.editora}" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	</div>
 	
 	<div class="row">
   	  <div class="form-group col-md-3">
   	  	<label for="exampleInputEmail1">Email</label>
-  	  	<input type="email" name="email" class="form-control" value="<%=livro.getEmail()%>" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<input type="email" name="email" class="form-control" value="${requestScope.livro.email}" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-3">
   	  	<label for="exampleInputEmail1">Data Lançamento</label>	
-  	  	<!--<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">-->
+  	  	<input type="text" class="form-control" value="${requestScope.livro.dataLancamento}" id="data" placeholder="Digite o valor">
   	  	<snc:data id="data"/>
   	  </div>
   	 </div>

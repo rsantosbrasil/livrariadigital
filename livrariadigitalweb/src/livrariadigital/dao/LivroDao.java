@@ -89,7 +89,7 @@ public class LivroDao {
 			stmt.setDate(5, new Date(livro.getDataLancamento().getTimeInMillis()));
 			stmt.setLong(6, livro.getId());
 
-			stmt.execute();
+			stmt.executeUpdate();
 			stmt.close();
 		} catch (Exception e) {
 			// TODO: handle exception

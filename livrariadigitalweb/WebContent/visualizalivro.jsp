@@ -14,7 +14,6 @@
  <link href="bootstrap/css/style.css" rel="stylesheet">
 </head>
 <body>
-<%Livro livro = (Livro) request.getAttribute("livro"); %>
 <c:import url="cabecalho.jsp" />
 <!-- Modal -->
 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
@@ -42,26 +41,26 @@
   <div class="row">
     <div class="col-md-4">
       <p><strong>Cadastro</strong></p>
-  	  <p><%=livro.getId()%></p>
+  	  <p>${requestScope.livro.id}</p>
     </div>
     <div class="col-md-4">
       <p><strong>Titulo</strong></p>
-  	  <p><%=livro.getTitulo()%></p>
+  	  <p>${requestScope.livro.titulo}</p>
     </div>
 	
 	<div class="col-md-4">
       <p><strong>Autor</strong></p>
-  	  <p><%=livro.getAutor() %></p>
+  	  <p>${requestScope.livro.autor}</p>
     </div>
 	
 	<div class="col-md-4">
       <p><strong>Editora</strong></p>
-  	  <p><%=livro.getEditora() %></p>
+  	  <p>${requestScope.livro.editora}</p>
     </div>
 
     <div class="col-md-4">
       <p><strong>Email</strong></p>
-  	  <p><%=livro.getEmail() %></p>
+  	  <p>${requestScope.livro.email}</p>
     </div>
 	
 	<div class="col-md-4">
