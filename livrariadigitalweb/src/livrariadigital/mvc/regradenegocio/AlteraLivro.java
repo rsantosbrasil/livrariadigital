@@ -1,5 +1,9 @@
 package livrariadigital.mvc.regradenegocio;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,14 +21,12 @@ public class AlteraLivro implements RegraDeNegocio {
 		livro.setEditora(req.getParameter("editora"));
 		livro.setEmail(req.getParameter("email"));
 		
-//		String data = req.getParameter("data");
-//		Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data);
-//		Calendar data2 = Calendar.getInstance();
-//		data2.setTime(date);
-//		
-//		livro.setDataLancamento(data2);
+		String data = req.getParameter("data");
+		Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+		Calendar data2 = Calendar.getInstance();
+		data2.setTime(date);
 		
-//		Connection con = (Connection) req.getAttribute("con");
+		livro.setDataLancamento(data2);
 		
 		LivroDao dao = new LivroDao();
 		dao.altera(livro);

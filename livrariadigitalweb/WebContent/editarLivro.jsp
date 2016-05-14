@@ -41,12 +41,12 @@
 	<div class="row">
   	  <div class="form-group col-md-3">
   	  	<label for="exampleInputEmail1">Email</label>
-  	  	<input type="email" name="email" class="form-control" value="${requestScope.livro.email}" id="exampleInputEmail1" placeholder="Digite o valor">
+  	  	<input type="text" name="email" class="form-control" value="${requestScope.livro.email}" id="exampleInputEmail1" placeholder="Digite o valor">
   	  </div>
 	  <div class="form-group col-md-3">
   	  	<label for="exampleInputEmail1">Data Lançamento</label>	
-  	  	<input type="text" class="form-control" value="${requestScope.livro.dataLancamento}" id="data" placeholder="Digite o valor">
-  	  	<snc:data id="data"/>
+  	  	<input type="text" class="form-control" name="data" value="${requestScope.livro.dataLancamento}" id="data" placeholder="Digite o valor">
+  	  <!--  	<snc:data id="data"/>-->
   	  </div>
   	 </div>
 	<hr />
