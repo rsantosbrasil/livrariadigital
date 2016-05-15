@@ -1,23 +1,25 @@
 package livrariadigital.mvc.regradenegocio;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import livrariadigital.dao.LivroDao;
+import livrariadigital.modelo.Livro;
 
-//alterado
 public class PesquisarLivro implements RegraDeNegocio{
-	public String execute(HttpServletRequest req, HttpServletResponse res)
-			throws Exception {
+	public String execute(HttpServletRequest req, HttpServletResponse res)throws Exception {
 		
-		//Livro livro = new Livro();
 		
-		String palavra = (req.getParameter("data[search]"));
-		LivroDao dao = new LivroDao();
+		String palavra = (req.getParameter("search"));
+		List<Livro> livros = new LivroDao().pesquisaPalavra(palavra);
+		req.setAttribute("livros", livros);
+		return "pesquisarlivros.jsp";
 		
-		dao.pesquisaPalavra(palavra);
-		System.out.println("livro localizado!");
-			
-		return "pesquisarlivro.jsp";
+		
+		
+		
+		
 	}
 }

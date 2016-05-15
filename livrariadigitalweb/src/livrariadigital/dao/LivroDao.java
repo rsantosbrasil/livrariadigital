@@ -112,10 +112,15 @@ public class LivroDao {
 	// adicionado
 	public List<Livro> pesquisaPalavra(String palavra) throws SQLException {
 
-		String sql = "SELECT * FROM livro WHERE titulo LIKE ? ";
+		String sql = "SELECT * FROM livro WHERE titulo LIKE ? or autor LIKE ? or  editora LIKE ?";
+		
+		
+		
 		PreparedStatement stm = conn.prepareStatement(sql);
 
 		stm.setString(1, "%" + palavra + "%");
+		stm.setString(2, "%" + palavra + "%");
+		stm.setString(3, "%" + palavra + "%");
 
 		ResultSet rset = stm.executeQuery(); // faz a consulta
 		List<Livro> livros = new ArrayList<Livro>();

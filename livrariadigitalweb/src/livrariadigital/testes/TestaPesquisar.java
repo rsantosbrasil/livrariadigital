@@ -14,7 +14,7 @@ public class TestaPesquisar {
 		//alterado
 		LivroDao dao = new LivroDao();
 
-		List<Livro> livros = dao.pesquisaPalavra("pedra");
+		List<Livro> livros = dao.pesquisaPalavra("Ro");
 
 		for (Livro livro : livros) {
 			System.out.println("Título: " + livro.getTitulo());

@@ -7,3 +7,14 @@ CREATE  TABLE `test`.`livro` (
   `dtlancamento` DATE NOT NULL ,
   PRIMARY KEY (`id`) );
 
+
+
+INSERT INTO `livro` (`id`, `titulo`, `autor`, `editora`, `email`, `dtlancamento`) 
+VALUES (NULL, 'Harry Potter e a Pedra Filosofal', 'J.K.Rowlling', 'Rocco', 'jkrowlling@gmail.com', '2006-05-01'), 
+(NULL, 'Harry Potter e a Câmara Secreta', 'J.K.Rowlling', 'Rocco', 'jkrowlling@gmail.com', '2007-05-01'), 
+(NULL, 'Harry Potter e o Prisioneiro de Azkaban','J.K.Rowlling', 'Rocco', 'jkrowlling@gmail.com', '2008-05-01'), 
+(NULL, 'Harry Potter e o Cálice de Fogo','J.K.Rowlling', 'Rocco', 'jkrowlling@gmail.com', '2009-05-01'), 
+(NULL, 'Harry Potter e o Enigma do Principe','J.K.Rowlling', 'Rocco', 'jkrowlling@gmail.com', '2010-05-01'), 
+(NULL, 'harry Potter e as Reliquias da Morte','J.K.Rowlling', 'Rocco', 'jkrowlling@gmail.com', '2011-05-01'), 
+(NULL, 'O Alquimista', 'Paulo Coelho', 'Sextante', 'paulocoelho@gmail.com', '1988-05-01'), 
+(NULL, 'Brida', 'Paulo Coelho', 'Sextante', 'paulocoelho@gmail.com', '1989-05-04');
