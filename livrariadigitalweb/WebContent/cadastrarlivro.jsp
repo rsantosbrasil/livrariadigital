@@ -55,7 +55,7 @@
 				</div>
 				<div class="form-group col-md-3">
 					<label for="exampleInputEmail1">Data Lançamento</label> <input
-						type="email" name="email" class="form-control"
+						type="text" name="data" class="form-control"
 						id="exampleInputEmail1" placeholder="DD/MM/YYYY">
 				</div>
 
